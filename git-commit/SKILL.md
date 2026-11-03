@@ -74,13 +74,14 @@ allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git add:*), Bash(git c
 | `chore` | 其他杂务（发布、清理、配置微调） |
 | `revert` | 回滚之前的提交 |
 
-**仓库约定优先**：仓库已有 commitlint/`CONTRIBUTING.md`/最近的提交风格与本节冲突时，按仓库来。本机习惯里还有一个可选的 `[verified]` 前缀（如 `[verified] fix(php): ...`），只在仓库历史里见过它时才沿用。
+**仓库约定优先**：仓库已有 commitlint/`CONTRIBUTING.md`/最近的提交风格与本节冲突时，按仓库来。但 summary 不要加 `[verified]`、`[wip]` 这类状态前缀——验证或进度状态不属于提交信息。
 
 反例（不要写）：
 
 - `chore : rm 3 skills not used` —— 冒号前多了空格；
 - `update stuff` —— 没有类型、没有信息量；
 - `fix: 修复了 xxx。` —— 中文 + 句号结尾，和仓库历史不一致；
+- `[verified] fix(php): ...` —— 标题带状态前缀，验证状态不进提交信息；
 - 三十行的 body 逐文件列改动、附带测试命令和输出 —— 这些属于汇报内容，不属于提交信息。
 
 ## 3. 提交粒度
